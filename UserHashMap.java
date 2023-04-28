@@ -14,6 +14,7 @@ public class UserHashMap {
 
         System.out.println("Enter phone number for which you want user details : ");
         String phone = sc.nextLine();
+        sc.close();
 
         //retrieve user value from HashMap for the phone key
         User user = userHashMap.get(phone);
