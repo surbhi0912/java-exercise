@@ -62,32 +62,31 @@ public class DeleteDirectory {
         Path path = Paths.get(filePath);
 
         System.out.println("Path is : " + path);
+        SimpleFileVisitor<Path> simpleFileVisitor = new SimpleFileVisitor<Path>() {
 
-        Files.walkFileTree(path,
-                new SimpleFileVisitor<>() {
+            // delete directories or folders
+            @Override
+            public FileVisitResult postVisitDirectory(Path dir,
+                                                      IOException exc)
+                    throws IOException {
+                System.out.println("Current dir : " + dir);
+                Files.delete(dir);
+                System.out.printf("Directory is deleted : %s%n", dir);
+                return FileVisitResult.CONTINUE;
+            }
 
-                    // delete directories or folders
-                    @Override
-                    public FileVisitResult postVisitDirectory(Path dir,
-                                                              IOException exc)
-                            throws IOException {
-                        System.out.println("Current dir : " + dir);
-                        Files.delete(dir);
-                        System.out.printf("Directory is deleted : %s%n", dir);
-                        return FileVisitResult.CONTINUE;
-                    }
+            // delete files
+            @Override
+            public FileVisitResult visitFile(Path file,
+                                             BasicFileAttributes attrs)
+                    throws IOException {
+                Files.delete(file);
+                System.out.printf("File is deleted : %s%n", file);
+                return FileVisitResult.CONTINUE;
+            }
+        };
 
-                    // delete files
-                    @Override
-                    public FileVisitResult visitFile(Path file,
-                                                     BasicFileAttributes attrs)
-                            throws IOException {
-                        Files.delete(file);
-                        System.out.printf("File is deleted : %s%n", file);
-                        return FileVisitResult.CONTINUE;
-                    }
-                }
-        );
+        Files.walkFileTree(path,simpleFileVisitor);
     }
 
     public static void deleteDirectoryJava8(String dir) throws IOException {

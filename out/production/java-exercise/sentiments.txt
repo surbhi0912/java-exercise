@@ -1,0 +1,2 @@
+positive=good,well,beautiful,awesome,nice
+negative=bad,sick,ugly,worse,kill,death
