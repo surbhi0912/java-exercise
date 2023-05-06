@@ -1,2 +1,2 @@
-Files in Java might be tricky  but it is fun to try it 
-Writing second line to test if it works 
+Files in Java might be tricky, but it is fun to try it!
+Writing second line to test if it works
