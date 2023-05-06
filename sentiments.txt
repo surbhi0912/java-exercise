@@ -1,2 +1,3 @@
-positive=good,well,beautiful,awesome,nice
-negative=bad,sick,ugly,worse,kill,death
+version https://git-lfs.github.com/spec/v1
+oid sha256:f2dafad3facc281501aa96e79ce0f67760bc4658968a319f4704f7c17b580eba
+size 81
