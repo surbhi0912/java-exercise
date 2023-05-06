@@ -8,7 +8,6 @@ import java.util.List;
 
 public class WriteToLargeFile {
 
-
     private static final int ITERATIONS = 5;
     private static final double MEG = (Math.pow(1024, 2));
     private static final int RECORD_COUNT = 4000000;
@@ -44,7 +43,7 @@ public class WriteToLargeFile {
             write(records, writer);
         } finally {
             // comment this out if you want to inspect the files afterward
-            file.delete();
+//            file.delete();
         }
     }
 
