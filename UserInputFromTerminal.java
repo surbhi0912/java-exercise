@@ -19,5 +19,7 @@ public class UserInputFromTerminal {
 
         System.out.println("The entered user name is : " + user.getName() + " and the age is " + user.getAge());
 
+        System.out.println(user.toString()); //run this before writing overridden toString function in User class
+        System.out.println(user.toString()); //then run this after writing overridden toString function
     }
 }

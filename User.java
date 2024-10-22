@@ -35,4 +35,9 @@ public class User {
 
     public User() {
     }
+
+    @Override
+    public String toString(){
+        return String.format("Name = %s and Age = %s", name, age);
+    }
 }
